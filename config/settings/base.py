@@ -1,5 +1,6 @@
 """Base settings to build other settings files upon."""
 
+# esta libreria nos permite hacer cosas como sumar o restar PATHS
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3
@@ -8,6 +9,7 @@ APPS_DIR = ROOT_DIR.path('cride')
 env = environ.Env()
 
 # Base
+# debug = var bool django_debug o sino es false
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
 # Language and timezone
@@ -20,6 +22,7 @@ USE_TZ = True
 
 # DATABASES
 DATABASES = {
+    # env ya carga toda la config necesaria para la BD
     'default': env.db('DATABASE_URL'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
