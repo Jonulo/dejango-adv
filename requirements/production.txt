@@ -5,6 +5,7 @@
 gunicorn==19.9.0
 
 # Static files
+# cargar toda la media a Amazon
 django-storages[boto3]==1.7.1
 
 # Email

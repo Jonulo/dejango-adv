@@ -33,6 +33,8 @@ ROOT_URLCONF = 'config.urls'
 # WSGI
 WSGI_APPLICATION = 'config.wsgi.application'
 
+# Users & authentication
+AUTH_USER_MODEL = 'users.User'
 # Apps
 DJANGO_APPS = [
     'django.contrib.auth',
@@ -46,6 +48,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
+    'cride.users.apps.UsersAppConfig'
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -84,6 +87,7 @@ MIDDLEWARE = [
 ]
 
 # Static files
+# en este caso no se utilizan porque usaremos una API
 STATIC_ROOT = str(ROOT_DIR('staticfiles'))
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
